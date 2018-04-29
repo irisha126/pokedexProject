@@ -174,8 +174,8 @@ openBall3.addEventListener('click',function(){
   
   
 
-myPokemon1.addEventListener('click',showStats('lugia'));
-myPokemon2.addEventListener('click',showStats());
+myPokemon1.addEventListener('click',showStats);
+myPokemon2.addEventListener('click',showStats);
 myPokemon3.addEventListener('click',showStats);
 
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<h1>Species</h1>
+<p>Click on a species to see what type it is:</p>
+
+<ul>
+  <li id="owl" data-animal-type="bird" data-hp="20" data-div-ref="owl-div">Owl</li>
+  <li id="salmon" data-animal-type="fish" data-hp="40" data-div-ref="salmon-div">Salmon</li>  
+  <li id="tarantula" data-animal-type="spider" data-hp="60" data-div-ref="tarantula-div">Tarantula</li> 
+  
+ 
+  <div id="owl-div">
+  	<img class="poki-img">
+    <div class="hp"></div>
+    <div class="attack"></div>
+    <div class="defense"></div>        
+  </div>
+  <div id="salmon-div">
+  	<img class="poki-img">
+    <div class="hp"></div>
+    <div class="attack"></div>
+    <div class="defense"></div> 
+  </div>
+  <div id="tarantula-div">
+  	<img class="poki-img">
+    <div class="hp"></div>
+    <div class="attack"></div>
+    <div class="defense"></div> 
+  </div>
+</ul>
+
+<script>
+
+	let liElem1 = document.querySelector('#owl');
+	let liElem2 = document.querySelector('#salmon');
+    let liElem3 = document.querySelector('#tarantula');
+    
+    function liClickCallback(myEvent) {
+    	// first determine which li was clicked.
+    	let clickedElement = myEvent.target;
+        
+        // then get the div-ref id of the linked div
+        let divRefId = clickedElement.getAttribute('data-div-ref');
+        
+        // we take the id and find the element by that id.
+        let divRefElement = document.querySelector('#' + divRefId + ' .hp'); // #owl-div .hp
+        let pokiImgElement = document.querySelector('#' + divRefId + ' .poki-img'); // #owl-div .poki-img
+        
+        
+        // we get the animal-type name of the clickedElement
+        let hp = clickedElement.getAttribute('data-hp');
+        
+        // we put the animal type into the linked div element.
+        divRefElement.innerText = hp;
+        console.log(animalType)
+    }
+    
+    liElem1.addEventListener('click', liClickCallback);
+    liElem2.addEventListener('click', liClickCallback);
+    liElem3.addEventListener('click', liClickCallback);    
+        
+    
+  
+</script>
+</body>
+</html>

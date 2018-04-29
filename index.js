@@ -45,9 +45,10 @@ class Pokemon{
   }
 
 
-
+ let link = 'http://pokeapi.co/api/v2/pokemon/'
  function getPokemonStats(name,id){
-   axios.get('http://pokeapi.co/api/v2/pokemon/'+id+'/.json')
+    let newLink = link+id+'/';
+   axios.get(newLink)
    .then(function(myResponse){
        let abilitiesArr = [];
        let abilitiesApi = result.data.abilities;
@@ -173,9 +174,9 @@ openBall3.addEventListener('click',function(){
   
   
 
-myPokemon1.addEventListener('mouseover',showStats);
-myPokemon2.addEventListener('mouseover',showStats);
-myPokemon3.addEventListener('mouseover',showStats);
+myPokemon1.addEventListener('click',showStats('lugia'));
+myPokemon2.addEventListener('click',showStats());
+myPokemon3.addEventListener('click',showStats);
 
 
 

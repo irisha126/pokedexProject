@@ -80,11 +80,11 @@ getPokemonStats('jigglypuff',39);
 
 
 let name = document.querySelector('.name');
-let id = document.querySelector('id');
+let id = document.querySelector('.id');
 let hp = document.querySelector('.hp');
 let attack = document.querySelector('.attack');
-let deffense = document.querySelector('deffense');
-let abilities = document.querySelector('abilities');
+let deffense = document.querySelector('.deffense');
+let abilities = document.querySelector('.abilities');
 
 function showStats(pokemon){
   let myPokemon = irakem.get(pokemon);

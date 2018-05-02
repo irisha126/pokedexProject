@@ -61,6 +61,8 @@ openBall1.addEventListener('click',function(){
         pokemonHidden1 = true;
         revealBall1.classList.remove('invisible-pokemon'); 
     }
+    stats.classList.add('stats');
+    messageElement.style.display = 'none';
 });
   
 
@@ -71,6 +73,8 @@ openBall2.addEventListener('click',function(){
         pokemonHidden2 = true;
         revealBall2.classList.remove('invisible-pokemon'); 
     }
+    stats.classList.add('stats');
+    messageElement.style.display = 'none';
 });
 
 openBall3.addEventListener('click',function(){
@@ -80,6 +84,8 @@ openBall3.addEventListener('click',function(){
         pokemonHidden3 = true;
         revealBall3.classList.remove('invisible-pokemon'); 
     }
+    stats.classList.add('stats');
+    messageElement.style.display = 'none';
 });
 
 
@@ -87,7 +93,7 @@ openBall3.addEventListener('click',function(){
 
 class Trainer{
     constructor(name){
-        this.name;
+        this.name = name;
         this.pokemon = [];
     }
 
@@ -155,8 +161,12 @@ let hp = document.querySelector('.hp');
 let attack = document.querySelector('.attack');
 let defense = document.querySelector('.defense');
 let abilities = document.querySelector('.abilities');
+let stats = document.querySelector('.stats');
+let trainerName = document.querySelector('.trainer-name');
 
+trainerName.innerHTML = irakem.name;
 
+let messageElement;
 function showStats(pokemon){
   let myPokemon = irakem.get(pokemon);
   name.innerText = myPokemon.name;
@@ -165,15 +175,23 @@ function showStats(pokemon){
   attack.innerText = myPokemon.attack;
   defense.innerText = myPokemon.defense;
   abilities.innerText = myPokemon.abilities;
+  stats.classList.remove('stats');
+  let messageAll = document.querySelectorAll('.message');
+  for(let i = 0; i < messageAll.length; i++){
+    messageAll[i].style.display = 'none';
+  }
+  messageElement = document.querySelector(`.message.${pokemon}-info`);
+  messageElement.style.display = 'block';
 }
-  
 
 myPokemon1.addEventListener('mouseover',function(){
-    showStats('lugia');
+    showStats('lugia');  
 });
+
 myPokemon2.addEventListener('mouseover',function(){
     showStats('blastoise');
 });
+
 myPokemon3.addEventListener('mouseover',function(){
     showStats('jigglypuff');
 });

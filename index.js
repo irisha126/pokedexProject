@@ -1,3 +1,6 @@
+// overal the code below looks good. We can condense it down though. If you want to do this
+// together before/after class feel free to schedule a meeting. Good job.
+
 let isDivHidden = true;
 let revealButton = document.querySelector('.btn');
 let toggleDiv = document.querySelector('.invisible');
@@ -25,6 +28,8 @@ let myPokemon3 = document.querySelector('#jigglypuff');
 
 
 let pokemonHidden1 = true;
+
+// we talked about this, but we can do all these event listeners with a single function
 revealBall1.addEventListener('click',function(){
     if(pokemonHidden1 === true){
         myPokemon1.classList.remove('invisible-pokemon');
@@ -54,6 +59,8 @@ revealBall3.addEventListener('click',function(){
     }
 });
 
+
+// we talked about this, but we can do all these event listeners with a single function
 openBall1.addEventListener('click',function(){
     if(pokemonHidden1 === false){
         myPokemon1.classList.add('invisible-pokemon');

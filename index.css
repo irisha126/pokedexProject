@@ -74,6 +74,7 @@ img{
 }
 
 
+/* Iryna you want to avoid making changes to bootstrap selectors. This will give you problems. */
 .col-lg-4{
     height: 220px;
 }
